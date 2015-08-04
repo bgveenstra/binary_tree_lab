@@ -4,7 +4,7 @@
 
 ### Directions
 
-Use the following `spec` and `doc` to implement you `BinaryTree`.
+Use the following `spec` and `doc` to implement your `BinaryTree`. Yay!
 
 To view the docs run the following in the repo project directory
 
