@@ -12,5 +12,5 @@ To view the docs run the following in the repo project directory
 open doc/index.html
 ```
 
-To run the tests use the `rspec spec` command.
+To run the tests use the `rspec spec/` command.
 
