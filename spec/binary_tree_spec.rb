@@ -55,8 +55,8 @@ describe "BinaryTree" do
     it "should insert to the right for greater than values" do
       @tree.insert(5)
       @tree.insert(6)
-      left = @tree.left
-      expect(left.value).to eql(6)
+      right = @tree.right
+      expect(right.value).to eql(6)
     end
 
     it "should return instance after insert" do

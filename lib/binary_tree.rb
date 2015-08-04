@@ -87,8 +87,29 @@ class BinaryTree
   #   my_tree.insert(6)
   #   #=> #<BinaryTree:0x007ff73e014f90 @value=5 @left=... @right=#<BinaryTree:0x007ff73c06a2f8 @value=6>>
 
-  def insert(val)
+  def insert(new_val)
 
+    if (@value.nil?)
+      @value = new_val
+    else
+      if new_val < @value
+        @left = @left || BinaryTree.new
+        @left.insert(new_val)
+      else
+        @right ||= BinaryTree.new
+        @right.insert(new_val)
+      end
+    end
+
+    # Terminal Condition
+      # if value of tree is nil
+      #   then set value to new_val
+    # Recursive Condition
+      # else 
+      #   if new_val less than value
+      #      then left.insert(new_val)
+      #   else then it's greater than equal to
+      #      so then we right.insert(new_val)
   end
 
   ##
