@@ -154,16 +154,6 @@ class BinaryTree
 
 
 
-
-
-  def to_arr_stack  # stack
-    # start at root
-    # go left as much as we can
-    # add nodes to the stack
-
-  end
-
-
 end
 
 mytree = BinaryTree.new(50)
