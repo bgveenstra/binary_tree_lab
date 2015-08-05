@@ -132,24 +132,9 @@ class BinaryTree
 
   ##
   # method to convert the tree to a sorted array
-
   def to_arr
 
   end
 
-  
-  ##
-  # returns the depth of the first empty subtree (missing child)
-  # uses breadth first search
-  def first_empty_depth
-    
-  end
-
-  ##
-  # checks if tree is balanced by comparing height
-  # to the depth of the first empty subtree
-  def balanced?
-   
-  end
 
 end
