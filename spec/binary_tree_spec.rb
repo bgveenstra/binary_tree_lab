@@ -70,9 +70,12 @@ describe "BinaryTree" do
 
     before(:each) do
       @tree = BinaryTree.new(50)
-      @tree.insert(25).insert(75)
-      @tree.insert(13).insert(37)
-      @tree.insert(63).insert(87)
+      @tree.insert(25)
+      @tree.insert(75)
+      @tree.insert(13)
+      @tree.insert(37)
+      @tree.insert(63)
+      @tree.insert(87)
     end
 
     it "should take the max height" do
@@ -85,9 +88,12 @@ describe "BinaryTree" do
 
     before(:each) do
       @tree = BinaryTree.new(50)
-      @tree.insert(25).insert(75)
-      @tree.insert(13).insert(37)
-      @tree.insert(63).insert(87)
+      @tree.insert(25)
+      @tree.insert(75)
+      @tree.insert(13)
+      @tree.insert(37)
+      @tree.insert(63)
+      @tree.insert(87)
     end
 
     it "should take the max height" do
@@ -120,14 +126,65 @@ describe "BinaryTree" do
 
     before(:each) do
       @tree = BinaryTree.new(50)
-      @tree.insert(25).insert(75)
-      @tree.insert(13).insert(37)
-      @tree.insert(63).insert(87)
+      @tree.insert(25)
+      @tree.insert(75)
+      @tree.insert(13)
+      @tree.insert(37)
+      @tree.insert(63)
+      @tree.insert(87)
     end
 
-    it "should be return a sorted arr" do
+    it "should return a sorted arr" do
       result = @tree.to_arr
       expect(result).to eql([13, 25, 37, 50, 63, 75, 87])
+    end
+
+  end
+
+  describe "#first_empty_depth" do
+
+    before(:each) do
+      @tree = BinaryTree.new(8)
+      @tree.insert(6)
+      @tree.insert(5)
+      @tree.insert(7)
+      @tree.insert(10)
+      @tree.insert(11)
+      @tree.insert(12)
+    end
+
+    it "should find the depth of the first empty subtree" do
+      result = @tree.first_empty_depth
+      expect(result).to eql 2
+    end
+
+  end
+
+
+  describe "#balanced?" do
+
+    it "should detect an unbalanced tree" do
+      @tree = BinaryTree.new(8)
+      @tree.insert(6)
+      @tree.insert(5)
+      @tree.insert(7)
+      @tree.insert(10)
+      @tree.insert(11)
+      @tree.insert(12)
+
+      expect(@tree.balanced?).to be false
+    end
+
+    it "should detect a balanced tree" do
+      @tree = BinaryTree.new(50)
+      @tree.insert(25)
+      @tree.insert(75)
+      @tree.insert(13)
+      @tree.insert(37)
+      @tree.insert(63)
+      @tree.insert(87)
+
+      expect(@tree.balanced?).to be true
     end
 
   end
