@@ -132,9 +132,46 @@ class BinaryTree
 
   ##
   # method to convert the tree to a sorted array
-  def to_arr
+  def to_arr  # recursive
+    sorted = []
+
+    # create a sorted array of the left subtree
+    if @left
+      sorted = sorted + @left.to_arr
+    end
+
+    # add an array with just the current node
+    sorted = sorted + [@value]
+
+    # create a sorted array of the right subtree
+    if @right
+      sorted = sorted + @right.to_arr
+    end
+
+    sorted
+
+  end
+
+
+
+
+
+  def to_arr_stack  # stack
+    # start at root
+    # go left as much as we can
+    # add nodes to the stack
 
   end
 
 
 end
+
+mytree = BinaryTree.new(50)
+mytree.insert(25)
+mytree.insert(75)
+mytree.insert(13)
+mytree.insert(37)
+mytree.insert(67)
+mytree.insert(100)
+
+p mytree.to_arr
