@@ -64,7 +64,7 @@ class BinaryTree
   # +@left+ and +@right+ subtrees are +nil+
 
   def leaf?
-
+    @left.nil? && @right.nil?
   end
 
   ##
@@ -91,6 +91,7 @@ class BinaryTree
 
     if (@value.nil?)
       @value = new_val
+      self
     else
       if new_val < @value
         @left = @left || BinaryTree.new
@@ -132,12 +133,34 @@ class BinaryTree
 
   ##
   # method to convert the tree to a sorted array
-
   def to_arr
-
+    puts "starting to_arr with value #{@value}"
+     # base case / terminal condition
+    if leaf?
+      p [@value]
+      return [@value]
+    else
+      subarr = []
+      puts "left of #{@value}"
+      if @left
+        p @left
+        subarr = subarr + @left.to_arr
+      end
+      puts "at #{@value}"
+      subarr = subarr + [@value]
+      p subarr
+      puts "right of #{@value}"
+      if @right
+        p @right
+        subarr = subarr + @right.to_arr
+      end
+      p subarr
+      return subarr
+    end
   end
 
-  
+
+
   ##
   # returns the depth of the first empty subtree (missing child)
   # uses breadth first search
@@ -149,7 +172,19 @@ class BinaryTree
   # checks if tree is balanced by comparing height
   # to the depth of the first empty subtree
   def balanced?
-   
+
   end
 
 end
+
+mytree = BinaryTree.new(50)
+mytree.insert(25)
+mytree.insert(75)
+mytree.insert(13)
+mytree.insert(37)
+mytree.insert(63)
+mytree.insert(87)
+
+p mytree
+
+mytree.to_arr
